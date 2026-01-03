@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .admin-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .submission {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    .submission h3 {
+      margin-top: 0;
+    }
+    .submission p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h2>Event Planner - Admin</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="admin.html">Admin Dashboard</a></li>
+      <li><a href="#" id="logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="admin-container">
+    <h1>Admin Dashboard</h1>
+    <p>Here are the form submissions:</p>
+    <div id="submissions"></div>
+  </div>
+
+  <script>
+    // Check if logged in
+    fetch('/admin/check', { credentials: 'include' })
+      .then(response => response.json())
+      .then(data => {
+        if (!data.loggedIn) {
+          window.location.href = 'login.html';
+        } else {
+          loadSubmissions();
+        }
+      });
+
+    function loadSubmissions() {
+      // Fetch submissions from server
+      fetch('/admin-data', { credentials: 'include' })
+        .then(response => response.json())
+        .then(submissions => {
+          const container = document.getElementById('submissions');
+          if (submissions.length === 0) {
+            container.innerHTML = '<p>No submissions yet.</p>';
+          } else {
+            submissions.forEach(sub => {
+              const div = document.createElement('div');
+              div.className = 'submission';
+              div.innerHTML = `
+              <h3>Submission #${sub.id}</h3>
+                <p><strong>Phone:</strong> ${sub.phone}</p>
+                <p><strong>Event:</strong> ${sub.event}</p>
+                <p><strong>Location:</strong> ${sub.location}</p>
+                <p><strong>Date:</strong> ${sub.date}</p>
+                <p><strong>Budget:</strong> ${sub.budget}</p>
+                <p><strong>Message:</strong> ${sub.message}</p>
+                <p><strong>Timestamp:</strong> ${new Date(sub.timestamp).toLocaleString()}</p>
+              `;
+              container.appendChild(div);
+            });
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching submissions:', error);
+          document.getElementById('submissions').innerHTML = '<p>Error loading submissions.</p>';
+        });
+    }
+
+    document.getElementById('logout').addEventListener('click', function() {
+      fetch('/admin/logout', { method: 'POST', credentials: 'include' })
+        .then(() => {
+          window.location.href = 'login.html';
+        });
+    });
+  </script>
+</body>
+</html>

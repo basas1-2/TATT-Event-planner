@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav>
+  <h2>Event Planner</h2>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+<section class="section">
+  <h1>Book a Consultation</h1>
+  <form id="whatsappForm">
+  <input type="number" id="phone" placeholder="Phone Number" required style="margin-bottom: 10px; width: 50%; padding: 8px;">
+  <input type="text" id="event" placeholder="Type of Event" required style="margin-bottom: 10px; width: 50%; padding: 8px;">
+  <input type="text" id="location" placeholder="Location" required style="margin-bottom: 10px; width: 50%; padding: 8px;">
+  <input type="date" id="date" placeholder="Date" required style="margin-bottom: 10px; width: 50%; padding: 8px;">
+  <input type="text" id="budget" placeholder="Budget" optional style="margin-bottom: 10px; width: 50%; padding: 8px;">
+  <textarea id="message" placeholder="Tell us about your event" style="margin-bottom: 10px; width: 50%; padding: 8px;"></textarea>
+
+  <p style="font-size:14px;">
+    By contacting us, you agree to our
+    <a href="privacy.html">Privacy Policy</a>.
+  </p>
+
+  <button type="submit">Send Message</button>
+</form>
+</section>
+<script src="js/main.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const images = ['pictures/img1.jpg', 'pictures/img2.jpg', 'pictures/img3.jpg', 'pictures/img4.jpg', 'pictures/img5.jpg'];
+  let currentIndex = 0;
+  const hero = document.querySelector('.hero');
+
+  function changeBackground() {
+    hero.style.backgroundImage = `url(${images[currentIndex]})`;
+    currentIndex = (currentIndex + 1) % images.length;
+  }
+
+  // Set initial image
+  changeBackground();
+  // Change every 5 seconds
+  setInterval(changeBackground, 5000);
+</script>
+
+<footer style="display: flex; background-color: lightblue; border-radius: 20px; margin-top: 5%;">
+  <div style="background-color: black; color: white; margin-top: 5%; margin-bottom: 5%; margin-left: 8%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); border-radius: 5px; padding-top: 5px; padding-left: 5px; padding-right: 5px;">
+  <p>© 2026 Event Planner</p>
+  <p>Operating in the United Kingdom (GMT/BST)</p>
+  <p>
+    <a href="privacy.html" style="color:white;">Privacy Policy</a>
+  </p>
+   </div>
+
+   <div style="background-color: black; color: white; margin-left: 4%; margin-top: 5%; margin-bottom: 5%; margin-left: 4%; padding-left: 5%; padding-right: 5%; padding-top: 2%; padding-bottom: 2%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); border-radius: 5px;">
+    <h1>social handle</h1>
+    <a href="www.instagram.com" style="text-decoration: none; color: white;"> <img src="pictures/2227.jpg" alt="" style="width: 50px; border-radius: 20px;"> instagram</a>
+   </div>
+
+    <div style="background-color: black; color: white; margin-left: 4%; margin-top: 5%; margin-bottom: 5%; margin-left: 4%; padding-left: 2%; padding-right: 2%; padding-top: 2%; padding-bottom: 2%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); border-radius: 5px;">
+    <h1>Contact Us</h1>
+    <a href="www.gfhjif.com" style="text-decoration: none; color: white;"> <img src="pictures/10507049.png" alt="" style="width: 100px;">WhatsApp</a>
+    <a href="www.instagram.com" style="text-decoration: none; color: white;"> <img src="pictures/10507049.png" alt="" style="width: 100px;"> Email</a>
+   </div>
+
+</footer>
+
+</body>
+</html>

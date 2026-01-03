@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top best Professional Event Planner in UK</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="cookieNotice" class="cookie-notice">
+  <p>
+    We use cookies to improve your experience.
+    By using this website, you agree to our
+    <a href="privacy.html">Privacy Policy</a>.
+  </p>
+  <button onclick="acceptCookies()">Accept</button>
+</div>
+
+<script>
+  function acceptCookies() {
+    document.getElementById("cookieNotice").style.display = "none";
+    localStorage.setItem("cookiesAccepted", "true");
+  }
+
+  if (localStorage.getItem("cookiesAccepted")) {
+    document.getElementById("cookieNotice").style.display = "none";
+  }
+
+  const images = ['pictures/img12.jpg', 'pictures/img13.jpg', 'pictures/img14.jpg', 'pictures/img4.jpg', 'pictures/img5.jpg'];
+  let currentIndex = 0;
+  const hero = document.querySelector('.hero');
+
+  function changeBackground() {
+    hero.style.backgroundImage = `url(${images[currentIndex]})`;
+    currentIndex = (currentIndex + 1) % images.length;
+  }
+
+  // Set initial image
+  changeBackground();
+  // Change every 5 seconds
+  setInterval(changeBackground, 5000);
+</script>
+<nav>
+  <h2>Event Planner</h2>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+<header class="hero" style="background-image: url(pictures/img1.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; height: 400px; width: 100%; margin-top: -2%;">
+ 
+  <header class="hero">
+ 
+</header>
+</header> 
+
+<div class="project1"> 
+ <div class="project3">
+  <h1 class="tat" style="margin-left: 45%;">TATT</h1>
+  <h1 class="tnt">Professional Event Planning & Decoration</h1>
+  <p class="nt">Making your event beautiful and memorable</p>
+<a href="contact.html" style="margin-left: 40%; background-color: blue; color: white; padding: 10px; border: 5px; border-radius: 5px; text-decoration: none;">Book Consolitation</a>
+
+<h1 class="pro"> PLAN, DESIGN, PRODUCE</h1>
+  <p class="pr"> we are a professional event planner and rental company, providing stylish chairs, tables, covers, and chafing dishes. From wedding to corporate event, we handle every detail, including after-event cleanup. our mission is to create beautiful, seamless, and stress-free celebrations tailored perfectly to your vision and style.</p>
+ </div>
+</div>
+  <div class="project2">
+    <img src="pictures/img2.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+    <img src="pictures/img3.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+    <img src="pictures/img4.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+    <img src="pictures/img5.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+  </div>
+
+<footer style="display: flex; background-color: lightblue; border-radius: 20px; margin-top: 5%;">
+  <div style="background-color: black; color: white; margin-top: 5%; margin-bottom: 5%; margin-left: 8%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); border-radius: 5px; padding-top: 5px; padding-left: 5px; padding-right: 5px;">
+  <p>© 2026 Event Planner</p>
+  <p>Operating in the United Kingdom (GMT/BST)</p>
+  <p>
+    <a href="privacy.html" style="color:white;">Privacy Policy</a>
+  </p>
+   </div>
+
+   <div style="background-color: black; color: white; margin-left: 4%; margin-top: 5%; margin-bottom: 5%; margin-left: 4%; padding-left: 5%; padding-right: 5%; padding-top: 2%; padding-bottom: 2%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); border-radius: 5px;">
+    <h1>social handle</h1>
+    <a href="www.instagram.com" style="text-decoration: none; color: white;"> <img src="pictures/2227.jpg" alt="" style="width: 50px; border-radius: 20px;"> instagram</a>
+   </div>
+
+    <div style="background-color: black; color: white; margin-left: 4%; margin-top: 5%; margin-bottom: 5%; margin-left: 4%; padding-left: 2%; padding-right: 2%; padding-top: 2%; padding-bottom: 2%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); border-radius: 5px;">
+    <h1>Contact Us</h1>
+    <a href="www.gfhjif.com" style="text-decoration: none; color: white;"> <img src="pictures/10507049.png" alt="" style="width: 100px;">WhatsApp</a>
+    <a href="www.instagram.com" style="text-decoration: none; color: white;"> <img src="pictures/10507049.png" alt="" style="width: 100px;"> Email</a>
+   </div>
+
+</footer>
+</body>
+</html>
