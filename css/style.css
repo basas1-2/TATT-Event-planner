@@ -149,17 +149,17 @@ body{
 #nav-menu {
   position: fixed;
   top: 0;
-  left: -250px;
-  width: 250px;
+  left: -150px;
+  width: 100px;
   height: 55vh;
   background: orange;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   padding-top: 80px;
-  padding-left: 20px;
+  padding-left: 15px;
   transition: left 0.3s ease;
-  z-index: 1000;
+  z-index: 900;
   box-shadow: 2px 0 5px rgba(0,0,0,0.3);
 }
 #nav-menu.show {
