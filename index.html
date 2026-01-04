@@ -42,7 +42,9 @@
 </script>
 <nav>
   <h2>Event Planner</h2>
-  <ul>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+  <ul id="nav-menu">
+    <li><button class="close-btn" onclick="toggleMenu()">×</button></li>
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
@@ -96,5 +98,11 @@
    </div>
 
 </footer>
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('nav-menu');
+  menu.classList.toggle('show');
+}
+</script>
 </body>
 </html>

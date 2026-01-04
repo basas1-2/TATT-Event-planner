@@ -9,7 +9,9 @@
 <body>
 <nav>
   <h2>Event Planner</h2>
-  <ul>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+  <ul id="nav-menu">
+    <li><button class="close-btn" onclick="toggleMenu()">×</button></li>
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
@@ -22,56 +24,66 @@
   <header class="hero" style="background-image: url(pictures/img1.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; height: 400px; width: 100%; margin-top: -2%;">
 </header>
 <section class="section">
-  <h1 style="padding-top: 15px; padding-left: 20%;">Our Services</h1>
+  <h1 style="padding-top: 15px; padding-left: 20%;">Our Work</h1>
 
   <div class="services">
     <div class="card">
-      <img src="pictures/front-view-photographer-discussing-with-couple.jpg" alt="Wedding Planning" style="width: 70%; padding-left: 15%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; padding-top: 20px;">
-      <h3>Event Planning</h3>
+      <img src="pictures/img12.jpg" alt="Wedding Planning" style="width: 70%; padding-left: 15%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; padding-top: 20px;">
       <p>
-We handle your event from start to finish, ensuring every detail is carefully planned and executed. From concept development to final delivery, we turn your ideas into a memorable experience.</p>
+Elegant wedding setup with coordinated seating and table arrangements.</p>
     </div>
 
     <div class="card">
       <img src="pictures/img9.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
-      <h3>Styling and Coordination</h3>
       <p>
-Our team creates a beautiful and well-coordinated look for your event. We manage colors, themes, and overall aesthetics while coordinating activities on the event day to ensure everything runs smoothly.</p>
+Naming ceremony arrangement designed for comfort and elegance.</p>
     </div>
 
     <div class="card">
       <img src="pictures/img8.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
-      <h3>Decorations and Layout</h3>
       <p>
-We provide creative and elegant decorations tailored to your event type. Our layout designs maximize space, enhance beauty, and create a welcoming atmosphere for guests.</p>
+Beautifully styled event space featuring premium chairs and table covers.</p>
     </div>
 
       <div class="card">
       <img src="pictures/img7.jpg" alt="Corporate Events" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
-      <h3>Venue Sourcing & Invitations</h3>
       <p>
-We help you find the perfect venue that suits your event size, theme, and budget. We also assist with invitation planning to ensure your guests receive clear and timely event details.</p>
+Complete wedding reception setup with catering and chafing dishes in place.</p>
     </div>
 
       <div class="card">
       <img src="pictures/img6.jpg" alt="party Planning" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
-      <h3>Vendors Management</h3>
-      <p>
-We work with trusted vendors and manage them on your behalf—caterers, photographers, entertainers, and more—so you don’t have to worry about coordination or delays.</p>
+      <p>Birthday celebration setup with clean, organized, and stylish seating.</p>
     </div>
 
       <div class="card">
       <img src="pictures/img5.jpg" alt="Corporate Events" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
-      <h3>Rentals (Chairs, Tables, Covers & Chafing Dishes)</h3>
       <p>
-We provide quality event rentals including chairs, tables, table covers, plates, cups cutlery and chafing dishes to give your event a complete and polished look.</p>
+Corporate event setup with professional layout and dining equipment.</p>
     </div>
 
      <div class="card">
       <img src="pictures/img4.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
-      <h3>After Event Cleanup</h3>
       <p>
-Once the event is over, we take care of the cleanup, leaving the venue neat and orderly so you can relax and enjoy the success of your event.</p>
+Well-arranged banquet setup with quality tables, chairs, and covers.</p>
+    </div>
+
+      <div class="card">
+      <img src="pictures/img4.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+      <p>
+Event rental setup showcasing our chairs, tables, and chafing dishes.</p>
+    </div>
+
+      <div class="card">
+      <img src="pictures/img4.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+      <p>
+Seamless event execution with full setup and after-event cleanup.</p>
+    </div>
+
+      <div class="card">
+      <img src="pictures/img4.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+      <p>
+A perfectly prepared venue ready for a memorable celebration.</p>
     </div>
   </div>
 </section>
@@ -115,6 +127,11 @@ Once the event is over, we take care of the cleanup, leaving the venue neat and 
   changeBackground();
   // Change every 5 seconds
   setInterval(changeBackground, 5000);
+
+  function toggleMenu() {
+    const menu = document.getElementById('nav-menu');
+    menu.classList.toggle('show');
+  }
 </script>
 </body>
 </html>

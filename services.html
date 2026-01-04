@@ -9,7 +9,9 @@
 <body>
 <nav>
   <h2>Event Planner</h2>
-  <ul>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+  <ul id="nav-menu">
+    <li><button class="close-btn" onclick="toggleMenu()">×</button></li>
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
@@ -25,14 +27,14 @@
 
   <div class="services">
     <div class="card">
-      <img src="pictures/front-view-photographer-discussing-with-couple.jpg" alt="Wedding Planning" style="width: 70%; padding-left: 15%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; padding-top: 20px;">
+      <img src="pictures/img12.jpg" alt="Wedding Planning" style="width: 70%; padding-left: 15%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; padding-top: 20px;">
       <h3>Event Planning</h3>
       <p>
 We handle your event from start to finish, ensuring every detail is carefully planned and executed. From concept development to final delivery, we turn your ideas into a memorable experience.</p>
     </div>
 
     <div class="card">
-      <img src="pictures/img9.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+      <img src="pictures/img2.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
       <h3>Styling and Coordination</h3>
       <p>
 Our team creates a beautiful and well-coordinated look for your event. We manage colors, themes, and overall aesthetics while coordinating activities on the event day to ensure everything runs smoothly.</p>
@@ -111,6 +113,11 @@ Once the event is over, we take care of the cleanup, leaving the venue neat and 
   changeBackground();
   // Change every 5 seconds
   setInterval(changeBackground, 5000);
+
+  function toggleMenu() {
+    const menu = document.getElementById('nav-menu');
+    menu.classList.toggle('show');
+  }
 </script>
 </body>
 </html>

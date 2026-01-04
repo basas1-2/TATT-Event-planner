@@ -29,7 +29,9 @@
 <body>
   <nav>
     <h2>Event Planner - Admin</h2>
-    <ul>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <ul id="nav-menu">
+      <li><button class="close-btn" onclick="toggleMenu()">×</button></li>
       <li><a href="index.html">Home</a></li>
       <li><a href="admin.html">Admin Dashboard</a></li>
       <li><a href="#" id="logout">Logout</a></li>
@@ -67,14 +69,15 @@
               const div = document.createElement('div');
               div.className = 'submission';
               div.innerHTML = `
-              <h3>Submission #${sub.id}</h3>
+              <h3>Submission #${sub._id}</h3>
                 <p><strong>Phone:</strong> ${sub.phone}</p>
                 <p><strong>Event:</strong> ${sub.event}</p>
                 <p><strong>Location:</strong> ${sub.location}</p>
                 <p><strong>Date:</strong> ${sub.date}</p>
                 <p><strong>Budget:</strong> ${sub.budget}</p>
                 <p><strong>Message:</strong> ${sub.message}</p>
-                <p><strong>Timestamp:</strong> ${new Date(sub.timestamp).toLocaleString()}</p>
+                <p><strong>Timestamp:</strong> ${new Date(sub.createdAt).toLocaleString()}</p>
+                <button onclick="deleteSubmission('${sub._id}')">Delete</button>
               `;
               container.appendChild(div);
             });
@@ -86,12 +89,36 @@
         });
     }
 
+    function deleteSubmission(id) {
+      if (confirm('Are you sure you want to delete this submission?')) {
+        fetch(`/admin/delete/${id}`, { method: 'DELETE', credentials: 'include' })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              loadSubmissions(); // Reload the list
+            } else {
+              alert('Error deleting submission.');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('Error deleting submission.');
+          });
+      }
+    }
+
     document.getElementById('logout').addEventListener('click', function() {
       fetch('/admin/logout', { method: 'POST', credentials: 'include' })
         .then(() => {
           window.location.href = 'login.html';
         });
     });
+  </script>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('show');
+    }
   </script>
 </body>
 </html>
