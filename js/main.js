@@ -23,18 +23,27 @@ document.getElementById("whatsappForm").addEventListener("submit", function (e) 
             message
         })
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Thank you! Your message has been sent to our admin.');
-            // Clear form
-            document.getElementById("whatsappForm").reset();
-        } else {
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Thank you! Your message has been sent to our admin.');
+                // Clear form
+                document.getElementById("whatsappForm").reset();
+            } else {
+                alert('Error sending message. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
             alert('Error sending message. Please try again.');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('Error sending message. Please try again.');
-    });
+        });
 });
+
+    const slides = document.querySelectorAll('#slider img');
+    let current = 0;
+
+  setInterval(() => {
+        slides[current].style.opacity = "0";
+    current = (current + 1) % slides.length;
+    slides[current].style.opacity = "1";
+  }, 1000);
