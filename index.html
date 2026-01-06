@@ -70,15 +70,37 @@
   <p class="pr">We provide professional event planning and rentals, handling everything from setup to cleanup to create seamless, stress-free events tailored to your vision.</p>
  </div>
 </div>
+
+<div class="all" style="">
+
   <div class="project2">
-    <img src="pictures/img2.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
-    <img src="pictures/img3.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
-    <img src="pictures/img4.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
-    <img src="pictures/img5.jpg" alt="event planner and decoration" style="width: 70%; padding-left: 15%; padding-top: 10%; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
-  </div>
+  <img id="slideshow" src="pictures/img2.jpg" alt="event planner and decoration">
+</div>
+
+<div class="project2" style="margin-top: 5%;">
+  <img id="slideshow2" src="pictures/img6.jpg" alt="another event setup">
+</div>
+
+<div class="project2" style="margin-top: 5%;">
+  <img id="slideshow3" src="pictures/img6.jpg" alt="another event setup">
+</div>
+
+<div class="project2" style="margin-top: 5%;">
+  <img id="slideshow4" src="pictures/img6.jpg" alt="another event setup">
+</div>
+
+<div class="project2" style="margin-top: 5%;">
+  <img id="slideshow5" src="pictures/img6.jpg" alt="another event setup">
+</div>
+
+<div class="project2" style="margin-top: 5%;">
+  <img id="slideshow6" src="pictures/img6.jpg" alt="another event setup">
+</div>
+
+</div>
 
 <footer style="display: flex; background-color: lightblue; border-radius: 20px; margin-top: 5%;">
-  <div style="background-color: black; color: white; margin-top: 5%; margin-bottom: 5%; margin-left: 8%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); border-radius: 5px; padding-top: 5px; padding-left: 5px; padding-right: 5px;">
+  <div style="background-color: black; color: white; margin-top: 2%; margin-bottom: 2%; margin-left: 2%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); border-radius: 5px; padding-top: 5px; padding-left: 5px; padding-right: 5px;">
   <p>© 2026 Event Planner</p>
   <p>Operating in the United Kingdom (GMT/BST)</p>
   <p>
@@ -86,15 +108,15 @@
   </p>
    </div>
 
-   <div style="background-color: black; color: white; margin-left: 4%; margin-top: 5%; margin-bottom: 5%; margin-left: 4%; padding-left: 5%; padding-right: 5%; padding-top: 2%; padding-bottom: 2%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); border-radius: 5px;">
-    <h1>social handle</h1>
-    <a href="www.instagram.com" style="text-decoration: none; color: white;"> <img src="pictures/2227.jpg" alt="" style="width: 50px; border-radius: 20px;"> instagram</a>
+   <div style="background-color: black; color: white; margin-left: 2%; margin-top: 2%; margin-bottom: 2%; margin-left: 2%; padding-left: 2%; padding-right: 2%; padding-top: 2%; padding-bottom: 2%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); border-radius: 5px;">
+    <h4>social handle</h4>
+    <a href="www.instagram.com" style="text-decoration: none; color: white;"> <img src="pictures/2227.jpg" alt="" style="width: 40px; border-radius: 20px;"> instagram</a>
    </div>
 
-    <div style="background-color: black; color: white; margin-left: 4%; margin-top: 5%; margin-bottom: 5%; margin-left: 4%; padding-left: 2%; padding-right: 2%; padding-top: 2%; padding-bottom: 2%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); border-radius: 5px;">
-    <h1>Contact Us</h1>
-    <a href="www.gfhjif.com" style="text-decoration: none; color: white;"> <img src="pictures/10507049.png" alt="" style="width: 100px;">WhatsApp</a>
-    <a href="www.instagram.com" style="text-decoration: none; color: white;"> <img src="pictures/10507049.png" alt="" style="width: 100px;"> Email</a>
+    <div style="background-color: black; color: white; margin-left: 2%; margin-top: 2%; margin-bottom: 2%; margin-left: 2%; padding-left: 1%; padding-right: 1%; padding-top: 1%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); border-radius: 5px;">
+    <h4>Contact Us</h4>
+    <a href="www.gfhjif.com" style="text-decoration: none; color: white;"> <img src="pictures/10507049.png" alt="" style="width: 70px;">WhatsApp</a>
+    <a href="www.instagram.com" style="text-decoration: none; color: white;"> <img src="pictures/10507049.png" alt="" style="width: 70px;"> Email</a>
    </div>
 
 </footer>
@@ -103,6 +125,108 @@ function toggleMenu() {
   const menu = document.getElementById('nav-menu');
   menu.classList.toggle('show');
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  function createSlideshow(slideshowId, images, intervalTime = 3000) {
+    let index = 0;
+    const slideshow = document.getElementById(slideshowId);
+    let intervalId;
+
+    if (!slideshow) return; // Safety check
+
+    function nextImage() {
+      index = (index + 1) % images.length;
+      slideshow.style.opacity = 0;
+      setTimeout(() => {
+        slideshow.src = images[index];
+        slideshow.style.opacity = 1;
+      }, 400);
+    }
+
+    function startSlideshow() {
+      intervalId = setInterval(nextImage, intervalTime);
+    }
+
+    function stopSlideshow() {
+      clearInterval(intervalId);
+    }
+
+    // Pause on hover
+    slideshow.addEventListener("mouseenter", stopSlideshow);
+    slideshow.addEventListener("mouseleave", startSlideshow);
+
+    // Swipe support
+    let startX = 0;
+    let endX = 0;
+
+    slideshow.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    slideshow.addEventListener("touchmove", (e) => {
+      endX = e.touches[0].clientX;
+    });
+
+    slideshow.addEventListener("touchend", () => {
+      const deltaX = endX - startX;
+      if (deltaX > 50) {
+        // Swipe right → previous image
+        index = (index - 1 + images.length) % images.length;
+        slideshow.style.opacity = 0;
+        setTimeout(() => {
+          slideshow.src = images[index];
+          slideshow.style.opacity = 1;
+        }, 400);
+      } else if (deltaX < -50) {
+        // Swipe left → next image
+        nextImage();
+      }
+    });
+
+    startSlideshow();
+  }
+
+  // First slideshow
+  createSlideshow("slideshow", [
+    "pictures/image_19.jpg",
+    "pictures/image_18.jpg",
+    "pictures/image_17.jpg",
+    "pictures/image_16.jpg"
+  ]);
+
+  // Second slideshow
+  createSlideshow("slideshow2", [
+    "pictures/image_15.jpg",
+    "pictures/image_14.jpg",
+    "pictures/image_13.jpg"
+  ]);
+
+   createSlideshow("slideshow3", [
+    "pictures/image_12.jpg",
+    "pictures/image_11.jpg",
+    "pictures/image_10.jpg"
+  ]);
+
+   createSlideshow("slideshow4", [
+    "pictures/image_9.jpg",
+    "pictures/image_8.jpg",
+    "pictures/image_7.jpg"
+  ]);
+
+   createSlideshow("slideshow5", [
+    "pictures/image_6.jpg",
+    "pictures/image_5.jpg",
+    "pictures/image_4.jpg"
+  ]);
+
+   createSlideshow("slideshow6", [
+    "pictures/image_1.jpg",
+    "pictures/image_2.jpg",
+    "pictures/image_3.jpg"
+  ]);
+
+});
 </script>
 </body>
 </html>

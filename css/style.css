@@ -188,3 +188,22 @@ body{
   cursor: pointer;
   margin-bottom: 20px;
 }
+
+.project2 img {
+  width: 50%;
+  height: 30%;
+  /* margin-top: 10%; */
+  margin-left: 15%;
+  border-radius: 10px;
+  transition: opacity 0.8s ease-in-out;
+  user-select: none; /* Prevent image selection during swipe */
+  touch-action: pan-y; /* Allow vertical scroll while swiping horizontally */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .project2 img {
+    width: 60%;
+    margin-left: 5%;
+  }
+}
